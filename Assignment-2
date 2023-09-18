@@ -1,0 +1,38 @@
+# 2:Please write a Python code to calculate Correlation, Cosine similarity, and Euclidean distance using NumPy. The
+# input will be two randomly generated or given vectors.
+
+
+# import required libraries
+import numpy as np
+from numpy.linalg import norm
+import random
+
+# define two lists or array
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+
+print("point1 :", point1)
+print("point2 :", point2)
+
+
+# Calculating Correlation
+Correlation = np.corrcoef(point1, point2)[0, 1]
+print("Correlation:",Correlation)
+
+# compute cosine similarity
+cosine = np.dot(point1, point2) / (norm(point1) * norm(point2))
+print("Cosine Similarity:", cosine)
+
+# Calculating Euclidean Distance
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+assign = point1 - point2
+# doing dot product for finding sum of the squares
+dotproduct = np.dot(assign.T, assign)
+# Doing squareroot
+Euclidean=np.sqrt(dotproduct)
+print("Euclidean Distance:", Euclidean)
