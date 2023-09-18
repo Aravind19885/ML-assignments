@@ -1,0 +1,36 @@
+# 3: Are Correlation, Cosine similarity, and Euclidean distance functions defined in SciPy AND Pandas?
+# If there are, please give another version of the above code by calling them directly.
+
+import numpy as np
+from scipy import stats
+from scipy.spatial import distance
+import random
+
+# define two lists or array
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+
+print("point1 :", point1)
+print("point2 :", point2)
+
+# Calculating Correlation
+Correlation = stats.pearsonr(point1, point2)
+print("correlation:", Correlation)
+
+# compute cosine similarity
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+cosine = distance.cosine(point1, point2)
+print("Cosine similarity:", cosine)
+
+# Calculating Euclidean Distance
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+Euclidean = distance.euclidean(point1, point2)
+print("Euclidean distance:", Euclidean)
