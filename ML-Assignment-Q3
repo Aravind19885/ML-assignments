@@ -4,15 +4,14 @@
 import numpy as np
 import pandas as pd
 from scipy import stats
+from scipy.spatial.distance import cosine
 from scipy.spatial import distance
 import random
 
 
 # define two lists or array
-point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
-point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
+point1 = np.array([26,34,52,44,81])
+point2 = np.array([22,44,55,23,23])
 print("point1 :", point1)
 print("point2 :", point2)
 
@@ -25,8 +24,8 @@ correlation = x1.corr(x2)
 print("Correlation:", correlation)
 
 # compute cosine similarity
-cosine = distance.cosine(point1, point2)
-print("Cosine similarity:", cosine)
+similarity = 1 - cosine(point1, point2)
+print("Cosine similarity:", similarity)
 
 # Calculate Euclidean distance
 euclidean_distance = distance.euclidean(x1, x2)
