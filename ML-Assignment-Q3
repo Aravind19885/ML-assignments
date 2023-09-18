@@ -2,35 +2,32 @@
 # If there are, please give another version of the above code by calling them directly.
 
 import numpy as np
+import pandas as pd
 from scipy import stats
 from scipy.spatial import distance
 import random
+
 
 # define two lists or array
 point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
                    random.randint(1, 15), random.randint(1, 15)])
 point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
                    random.randint(1, 15), random.randint(1, 15)])
-
 print("point1 :", point1)
 print("point2 :", point2)
 
-# Calculating Correlation
-Correlation = stats.pearsonr(point1, point2)
-print("correlation:", Correlation)
+# Create Pandas Series from the vectors
+x1 = pd.Series(point1)
+x2 = pd.Series(point2)
+
+# Calculate correlation
+correlation = x1.corr(x2)
+print("Correlation:", correlation)
 
 # compute cosine similarity
-point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
-point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
 cosine = distance.cosine(point1, point2)
 print("Cosine similarity:", cosine)
 
-# Calculating Euclidean Distance
-point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
-point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
-                   random.randint(1, 15), random.randint(1, 15)])
-Euclidean = distance.euclidean(point1, point2)
-print("Euclidean distance:", Euclidean)
+# Calculate Euclidean distance
+euclidean_distance = distance.euclidean(x1, x2)
+print("Euclidean Distance:", euclidean_distance)
