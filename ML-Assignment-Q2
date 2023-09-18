@@ -8,8 +8,10 @@ from numpy.linalg import norm
 import random
 
 # define two lists or array
-point1 = np.array([26,34,52,44,81])
-point2 = np.array([22,44,55,23,23])
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
 
 print("point1 :", point1)
 print("point2 :", point2)
@@ -24,8 +26,10 @@ cosine = np.dot(point1, point2) / (norm(point1) * norm(point2))
 print("Cosine Similarity:", cosine)
 
 # Calculating Euclidean Distance
-point1 = np.array([26,34,52,44,81])
-point2 = np.array([22,44,55,23,23])
+point1 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
+point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(1, 15), random.randint(1, 15),
+                   random.randint(1, 15), random.randint(1, 15)])
 assign = point1 - point2
 # doing dot product for finding sum of the squares
 dotproduct = np.dot(assign.T, assign)
