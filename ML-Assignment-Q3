@@ -45,4 +45,7 @@ x2 = pd.Series(point2)
 
 # Calculate correlation
 correlation = x1.corr(x2)
-print("Correlation:", correlation)
+print("Correlation:", correlation
+
+#We can only perform Correlation using PANDAS
+#There are no inbulit functions to find cosine similarity and Euclidean distance
