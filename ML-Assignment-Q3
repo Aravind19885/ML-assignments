@@ -1,6 +1,6 @@
-# 3: Are Correlation, Cosine similarity, and Euclidean distance functions defined in SciPy AND Pandas?
+# 3: Are Correlation, Cosine similarity, and Euclidean distance functions defined in SciPy
 # If there are, please give another version of the above code by calling them directly.
-
+#SCIPY
 import numpy as np
 from scipy import stats
 from scipy.spatial.distance import cosine
@@ -27,3 +27,22 @@ print("Cosine similarity:", similarity)
 # Calculate Euclidean distance
 euclidean_distance = distance.euclidean(point1, point2)
 print("Euclidean Distance:", euclidean_distance)
+
+# Finding Correlation using PANDAS
+
+import numpy as np
+import pandas as pd
+
+# define two lists or array
+point1 = np.array([26,34,52,44,81])
+point2 = np.array([22,44,55,23,23])
+print("point1 :", point1)
+print("point2 :", point2)
+
+# Create Pandas Series from the vectors
+x1 = pd.Series(point1)
+x2 = pd.Series(point2)
+
+# Calculate correlation
+correlation = x1.corr(x2)
+print("Correlation:", correlation)
