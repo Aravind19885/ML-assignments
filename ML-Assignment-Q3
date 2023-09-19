@@ -2,7 +2,6 @@
 # If there are, please give another version of the above code by calling them directly.
 
 import numpy as np
-import pandas as pd
 from scipy import stats
 from scipy.spatial.distance import cosine
 from scipy.spatial import distance
@@ -17,12 +16,8 @@ point2 = np.array([random.randint(1, 15), random.randint(1, 15), random.randint(
 print("point1 :", point1)
 print("point2 :", point2)
 
-# Create Pandas Series from the vectors
-x1 = pd.Series(point1)
-x2 = pd.Series(point2)
-
 # Calculate correlation
-correlation = x1.corr(x2)
+correlation =stats.pearsonr(point1, point2)
 print("Correlation:", correlation)
 
 # compute cosine similarity
@@ -30,5 +25,5 @@ similarity = 1 - cosine(point1, point2)
 print("Cosine similarity:", similarity)
 
 # Calculate Euclidean distance
-euclidean_distance = distance.euclidean(x1, x2)
+euclidean_distance = distance.euclidean(point1, point2)
 print("Euclidean Distance:", euclidean_distance)
